@@ -32,10 +32,18 @@ AppAsset::register($this);
 
     <?php
 
+
+
     $menuItems = [
         ['label' => 'Админская', 'url' => ['/admin/default/index']],
+        ['label' => 'Главная', 'url' => ['/site/index']],
         ['label' => 'Расписание', 'url' => ['/admin/schedule']],
         ['label' => 'Роли', 'url' => ['/rbac/default/index']],
+
+        Yii::$app->user->id == 1 ? (
+        ['label' => 'Регистрация', 'url' => ['/site/signup']]
+        ) : (''),
+
 
         [
             'label' => 'Выйти (' . \Yii::$app->user->identity->username . ')',
@@ -54,9 +62,10 @@ AppAsset::register($this);
 
     echo Nav::widget([
                          'options' => ['class' => 'navbar-nav navbar-right'],
-                         'items' =>  Helper::filter($menuItems),
+                         'items' => Helper::filter($menuItems),
                      ]);
     NavBar::end();
+
     ?>
 
     <div class="container">

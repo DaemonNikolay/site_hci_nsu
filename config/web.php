@@ -78,11 +78,11 @@ $config = [
     'as access' => [
         'class' => 'mdm\admin\components\AccessControl',
         'allowActions' => [
-            'site/*',
-//            'admin/*',
-//            'rbac/*',
+            'site/index',
+            'site/login',
+            'site/logout',
             'schedule/index',
-        ]
+        ],
     ],
 
     'params' => $params,
