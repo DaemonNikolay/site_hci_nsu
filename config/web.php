@@ -8,6 +8,7 @@ $config = [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'language' => 'ru',
+    'name' => 'ВКИ НГУ',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm' => '@vendor/npm-asset',
@@ -78,9 +79,10 @@ $config = [
     'as access' => [
         'class' => 'mdm\admin\components\AccessControl',
         'allowActions' => [
-            'site/index',
-            'site/login',
-            'site/logout',
+//            'site/index',
+//            'site/login',
+//            'site/logout',
+            'site/*',
             'schedule/index',
         ],
     ],

@@ -5,6 +5,7 @@ namespace app\controllers;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
+use yii\web\ForbiddenHttpException;
 use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm as Login;
@@ -77,7 +78,8 @@ class SiteController extends Controller
         }
 
         $model = new Login();
-        if ($model->load(Yii::$app->getRequest()->post()) && $model->login()) {
+        if ($model->load(Yii::$app->getRequest()
+                                  ->post()) && $model->login()) {
             return $this->goBack();
         } else {
             return $this->render('login', [
@@ -92,16 +94,21 @@ class SiteController extends Controller
      */
     public function actionSignup()
     {
-        $model = new Signup();
-        if ($model->load(Yii::$app->getRequest()->post())) {
-            if ($user = $model->signup()) {
-                return $this->goHome();
+        if (Yii::$app->user->id == 1) {
+            $model = new Signup();
+            if ($model->load(Yii::$app->getRequest()
+                                      ->post())) {
+                if ($user = $model->signup()) {
+                    return $this->goHome();
+                }
             }
+
+            return $this->render('signup', [
+                'model' => $model,
+            ]);
         }
 
-        return $this->render('signup', [
-            'model' => $model,
-        ]);
+        throw new ForbiddenHttpException("Недостаточно прав");
     }
 
     /**
