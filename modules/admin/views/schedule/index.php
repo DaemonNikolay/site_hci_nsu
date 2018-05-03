@@ -3,6 +3,8 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
+use app\models\Groups;
+
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\ScheduleSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -26,11 +28,27 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+//            'id',
             'for_the_day',
-            'for_the_group',
-            'session_1_discipline',
-            'session_1_teacher',
+
+            [
+                'attribute'=>'for_the_group',
+                'label'=>'Группы',
+                'value'=>'forTheGroup.name',
+            ],
+
+            [
+                'attribute'=>'session_1_discipline',
+                'label'=>'Пара 1: дисциплина',
+                'value'=>'session1Discipline.name',
+            ],
+
+            [
+                'attribute'=>'session_1_teacher',
+                'label'=>'Пара 1: преподаватель',
+                'value'=>'session1Teacher.name',
+            ],
+            
             //'session_2_discipline',
             //'session_2_teacher',
             //'session_3_discipline',
