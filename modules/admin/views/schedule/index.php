@@ -48,7 +48,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'label'=>'Пара 1: преподаватель',
                 'value'=>'session1Teacher.name',
             ],
-            
+
             //'session_2_discipline',
             //'session_2_teacher',
             //'session_3_discipline',

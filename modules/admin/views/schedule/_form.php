@@ -2,15 +2,37 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
+use app\models\Groups;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Schedule */
+/* @var $groups app\models\Schedule */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
 <div class="schedule-form">
-
     <?php $form = ActiveForm::begin(); ?>
+
+
+
+    <?php $model->id = Yii::$app->user->id; ?>
+<!---->
+<!--    --><?php //var_dump($model->id) ;
+//    exit;
+//
+//    ?>
+
+
+
+
+
+    <?= $form->field($model, 'id')->dropDownList(ArrayHelper::map($groups, 'id', 'name'))->label('Выберите группу'); ?>
+
+
+
+
+
 
     <?= $form->field($model, 'for_the_day')->textInput() ?>
 

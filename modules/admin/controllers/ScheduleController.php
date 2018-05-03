@@ -70,8 +70,7 @@ class ScheduleController extends Controller
         $model = new Schedule();
         $model->id = Yii::$app->user->id;
 
-        $groups = Groups::find()
-                        ->all();
+        $groups = Groups::find()->all();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
