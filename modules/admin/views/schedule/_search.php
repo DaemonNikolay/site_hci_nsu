@@ -60,7 +60,7 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'session_6_room') ?>
 
-    <?php // echo $form->field($model, 'updated_ad') ?>
+    <?php // echo $form->field($model, 'updated_at') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

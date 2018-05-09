@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\jui\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Schedule */
@@ -12,7 +13,9 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'for_the_day')->textInput() ?>
+    <?= $form->field($model, 'for_the_day')->widget(DatePicker::classname(), ['options' => ['class' => 'form-control',],
+                                                                              'language' => 'ru',
+                                                                              'dateFormat' => 'yyyy-MM-dd',]) ?>
 
     <?= $form->field($model, 'for_the_group')->textInput() ?>
 
@@ -51,8 +54,6 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'session_6_teacher')->textInput() ?>
 
     <?= $form->field($model, 'session_6_room')->textInput() ?>
-
-    <?= $form->field($model, 'updated_ad')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

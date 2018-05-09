@@ -2,7 +2,6 @@
 
 namespace app\modules\admin\controllers;
 
-use app\models\Groups;
 use Yii;
 use app\models\Schedule;
 use app\models\ScheduleSearch;
@@ -16,7 +15,7 @@ use yii\filters\VerbFilter;
 class ScheduleController extends Controller
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function behaviors()
     {
@@ -53,8 +52,6 @@ class ScheduleController extends Controller
      */
     public function actionView($id)
     {
-
-
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
@@ -68,9 +65,6 @@ class ScheduleController extends Controller
     public function actionCreate()
     {
         $model = new Schedule();
-        $model->id = Yii::$app->user->id;
-
-        $groups = Groups::find()->all();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -78,7 +72,6 @@ class ScheduleController extends Controller
 
         return $this->render('create', [
             'model' => $model,
-            'groups' => $groups,
         ]);
     }
 
@@ -111,8 +104,7 @@ class ScheduleController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)
-             ->delete();
+        $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
     }

@@ -49,7 +49,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'session_6_discipline',
             'session_6_teacher',
             'session_6_room',
-            'updated_ad',
+            'updated_at',
         ],
     ]) ?>
 

@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'for_the_group',
             'session_1_discipline',
             'session_1_teacher',
-            'session_1_room',
+            //'session_1_room',
             //'session_2_discipline',
             //'session_2_teacher',
             //'session_2_room',
@@ -47,7 +47,7 @@ $this->params['breadcrumbs'][] = $this->title;
             //'session_6_discipline',
             //'session_6_teacher',
             //'session_6_room',
-            //'updated_ad',
+            //'updated_at',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
