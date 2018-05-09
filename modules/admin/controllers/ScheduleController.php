@@ -2,6 +2,10 @@
 
 namespace app\modules\admin\controllers;
 
+use app\models\Disciplines;
+use app\models\Groups;
+use app\models\Rooms;
+use app\models\Teachers;
 use Yii;
 use app\models\Schedule;
 use app\models\ScheduleSearch;
@@ -19,14 +23,7 @@ class ScheduleController extends Controller
      */
     public function behaviors()
     {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
+        return ['verbs' => ['class' => VerbFilter::className(), 'actions' => ['delete' => ['POST'],],],];
     }
 
     /**
@@ -38,10 +35,7 @@ class ScheduleController extends Controller
         $searchModel = new ScheduleSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
+        return $this->render('index', ['searchModel' => $searchModel, 'dataProvider' => $dataProvider,]);
     }
 
     /**
@@ -52,9 +46,7 @@ class ScheduleController extends Controller
      */
     public function actionView($id)
     {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
+        return $this->render('view', ['model' => $this->findModel($id),]);
     }
 
     /**
@@ -70,9 +62,13 @@ class ScheduleController extends Controller
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
-        return $this->render('create', [
-            'model' => $model,
-        ]);
+        $groups = Groups::find()->all();
+        $teachers = Teachers::find()->all();
+        $rooms = Rooms::find()->all();
+        $disciplines = Disciplines::find()->all();
+
+        return $this->render('create', ['groups' => $groups, 'model' => $model, 'teachers' => $teachers,
+                                        'rooms' => $rooms, 'disciplines' => $disciplines]);
     }
 
     /**
@@ -90,9 +86,7 @@ class ScheduleController extends Controller
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
-        return $this->render('update', [
-            'model' => $model,
-        ]);
+        return $this->render('update', ['model' => $model,]);
     }
 
     /**
