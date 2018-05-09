@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\jui\DatePicker;
+use yii\helpers\ArrayHelper;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Schedule */
@@ -15,9 +16,9 @@ use yii\jui\DatePicker;
 
     <?= $form->field($model, 'for_the_day')->widget(DatePicker::classname(), ['options' => ['class' => 'form-control',],
                                                                               'language' => 'ru',
-                                                                              'dateFormat' => 'yyyy-MM-dd',]) ?>
-
-    <?= $form->field($model, 'for_the_group')->textInput() ?>
+                                                                              'dateFormat' => 'dd.MM.yyyy',]) ?>
+    
+<!--    --><?//= $form->field($model, 'for_the_group')->dropDownList(ArrayHelper::map($groups, 'id', 'name'))->label('Выберите группу'); ?>
 
     <?= $form->field($model, 'session_1_discipline')->textInput() ?>
 
