@@ -13,18 +13,17 @@ use app\models\Schedule;
 class ScheduleSearch extends Schedule
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function rules()
     {
         return [
-            [['id', 'for_the_group', 'session_1_discipline', 'session_1_teacher', 'session_2_discipline', 'session_2_teacher', 'session_3_discipline', 'session_3_teacher', 'session_4_discipline', 'session_4_teacher', 'session_5_discipline', 'session_5_teacher', 'session_6_discipline', 'session_6_teacher', 'name_room'], 'integer'],
-            [['for_the_day', 'updated_at'], 'safe'],
+            [['id', 'for_the_day', 'for_the_group', 'session_1_discipline', 'session_1_teacher', 'session_1_room', 'session_2_discipline', 'session_2_teacher', 'session_2_room', 'session_3_discipline', 'session_3_teacher', 'session_3_room', 'session_4_discipline', 'session_4_teacher', 'session_4_room', 'session_5_discipline', 'session_5_teacher', 'session_5_room', 'session_6_discipline', 'session_6_teacher', 'session_6_room', 'updated_ad'], 'integer'],
         ];
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function scenarios()
     {
@@ -64,18 +63,23 @@ class ScheduleSearch extends Schedule
             'for_the_group' => $this->for_the_group,
             'session_1_discipline' => $this->session_1_discipline,
             'session_1_teacher' => $this->session_1_teacher,
+            'session_1_room' => $this->session_1_room,
             'session_2_discipline' => $this->session_2_discipline,
             'session_2_teacher' => $this->session_2_teacher,
+            'session_2_room' => $this->session_2_room,
             'session_3_discipline' => $this->session_3_discipline,
             'session_3_teacher' => $this->session_3_teacher,
+            'session_3_room' => $this->session_3_room,
             'session_4_discipline' => $this->session_4_discipline,
             'session_4_teacher' => $this->session_4_teacher,
+            'session_4_room' => $this->session_4_room,
             'session_5_discipline' => $this->session_5_discipline,
             'session_5_teacher' => $this->session_5_teacher,
+            'session_5_room' => $this->session_5_room,
             'session_6_discipline' => $this->session_6_discipline,
             'session_6_teacher' => $this->session_6_teacher,
-            'name_room' => $this->name_room,
-            'updated_at' => $this->updated_at,
+            'session_6_room' => $this->session_6_room,
+            'updated_ad' => $this->updated_ad,
         ]);
 
         return $dataProvider;
