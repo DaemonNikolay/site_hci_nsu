@@ -1,0 +1,15 @@
+.day-schedule {
+    width: 30%;
+    float: left;
+    margin-right: 20px;
+}
+
+.group-schedule {
+    width: 30%;
+}
+
+.general-schedule {
+    width: 30%;
+    float: left;
+    margin-right: 15px;
+}
