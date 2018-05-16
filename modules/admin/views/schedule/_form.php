@@ -8,6 +8,7 @@ use yii\widgets\Pjax;
 use yii\helpers\Url;
 use yii\widgets\Menu;
 use app\assets\AppAsset;
+use yii\bootstrap\Button;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Schedule */
@@ -23,10 +24,9 @@ use app\assets\AppAsset;
                               ['label' => '+ аудиторию', 'url' => ['#'], 'options' => ['href' => Url::to(['#'])]]
 
 ], 'options' => ['tag' => 'div', 'class' => 'list-group'], // обертка вместо <ul>
-                  'itemOptions' => ['tag' => 'a', 'class' => 'list-group-item'], 'linkTemplate' => '{label}'
+                  'itemOptions' => ['tag' => 'a', 'class' => 'list-group-item'], 'linkTemplate' => '{label}']); ?>
 
 
-                 ]); ?>
 
 <div class="schedule-form">
 
