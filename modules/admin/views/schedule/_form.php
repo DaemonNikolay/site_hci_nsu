@@ -28,11 +28,7 @@ $header = '<h4 class="modal-title" id="myModalLabel">Модальное окно
 $footer = '<button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
 <button type="button" class="btn btn-primary">Сохранитfdь</button>';
 
-$modal = Modal::begin([
-'id' => 'myModal',
-'header' => $header,
-'footer' => $footer
-]); ?>
+$modal = Modal::begin(['id' => 'myModal', 'header' => $header, 'footer' => $footer]); ?>
 
 <p>Текст модального окна</p>
 
@@ -45,7 +41,6 @@ $modal = Modal::begin([
 
 ], 'options' => ['tag' => 'div', 'class' => 'list-group'], // обертка вместо <ul>
                   'itemOptions' => ['tag' => 'a', 'class' => 'list-group-item'], 'linkTemplate' => '{label}']); ?>
-
 
 
 <div class="schedule-form">
