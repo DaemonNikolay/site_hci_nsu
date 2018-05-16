@@ -1,12 +1,21 @@
+<?php
+
+use yii\widgets\Menu;
+use yii\helpers\Url;
+
+$this->title = 'Админская';
+$this->params['breadcrumbs'][] = $this->title;
+?>
+
 <div class="admin-default-index">
-    <h1><?= $this->context->action->uniqueId ?></h1>
-    <p>
-        This is the view content for action "<?= $this->context->action->id ?>".
-        The action belongs to the controller "<?= get_class($this->context) ?>"
-        in the "<?= $this->context->module->id ?>" module.
-    </p>
-    <p>
-        You may customize this page by editing the following file:<br>
-        <code><?= __FILE__ ?></code>
-    </p>
+    <h1><?= $this->title ?></h1>
+
+    <?= Menu::widget(['items' => [['label' => 'Преподаватели', 'url' => ['#'], 'options' => ['href' => Url::to(['#'])]],
+                                  ['label' => 'Группы', 'url' => ['#'], 'options' => ['href' => Url::to(['#'])]],
+                                  ['label' => 'Дисциплины', 'url' => ['#'], 'options' => ['href' => Url::to(['#'])]],
+                                  ['label' => 'Аудитории', 'url' => ['#'], 'options' => ['href' => Url::to(['#'])],]
+
+    ], 'options' => ['tag' => 'div', 'class' => 'list-group'], // обертка вместо <ul>
+                      'itemOptions' => ['tag' => 'a', 'class' => 'list-group-item'], 'linkTemplate' => '{label}']); ?>
+
 </div>

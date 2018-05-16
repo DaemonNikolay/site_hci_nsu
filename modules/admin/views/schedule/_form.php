@@ -30,7 +30,7 @@ $footer = '<button type="button" class="btn btn-default" data-dismiss="modal">З
 
 $modal = Modal::begin(['id' => 'myModal', 'header' => $header, 'footer' => $footer]); ?>
 
-<p>Текст модального окна</p>
+<p>Здесь содержимое модального окна</p>
 
 <?php $modal::end(); ?>
 
