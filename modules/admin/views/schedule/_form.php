@@ -8,7 +8,7 @@ use yii\widgets\Pjax;
 use yii\helpers\Url;
 use yii\widgets\Menu;
 use app\assets\AppAsset;
-use yii\bootstrap\Button;
+use yii\bootstrap\Modal;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Schedule */
@@ -18,6 +18,26 @@ use yii\bootstrap\Button;
 /* @var $disciplines app\models\Schedule */
 /* @var $form yii\widgets\ActiveForm */
 ?>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Модальное окно
+</button>
+
+<?php
+$header = '<h4 class="modal-title" id="myModalLabel">Модальное окно</h4>';
+$footer = '<button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+<button type="button" class="btn btn-primary">Сохранитfdь</button>';
+
+$modal = Modal::begin([
+'id' => 'myModal',
+'header' => $header,
+'footer' => $footer
+]); ?>
+
+<p>Текст модального окна</p>
+
+<?php $modal::end(); ?>
+
 
 <?= Menu::widget(['items' => [['label' => '+ преподавателя', 'url' => ['#'], 'options' => ['href' => Url::to(['#'])]],
                               ['label' => '+ группу', 'url' => ['#'], 'options' => ['href' => Url::to(['#'])]],
