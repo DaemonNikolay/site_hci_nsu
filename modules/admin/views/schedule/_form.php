@@ -9,6 +9,7 @@ use yii\helpers\Url;
 use yii\widgets\Menu;
 use app\assets\AppAsset;
 use yii\bootstrap\Modal;
+use yii\bootstrap\Nav;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Schedule */
@@ -19,20 +20,52 @@ use yii\bootstrap\Modal;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-    Модальное окно
-</button>
+<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">-->
+<!--    Модальное окно-->
+<!--</button>-->
+<!---->
+<?php
+//$header = '<h4 class="modal-title" id="myModalLabel">Модальное окно</h4>';
+//$footer = '<button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+//<button type="button" class="btn btn-primary">Сохранитfdь</button>';
+//
+//$modal = Modal::begin(['id' => 'myModal', 'header' => $header, 'footer' => $footer]); ?>
+<!---->
+<!--<p>Здесь содержимое модального окна</p>-->
+<!---->
+<?php //$modal::end(); ?>
+
+
 
 <?php
-$header = '<h4 class="modal-title" id="myModalLabel">Модальное окно</h4>';
-$footer = '<button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
-<button type="button" class="btn btn-primary">Сохранитfdь</button>';
+//
+//echo Nav::widget([
+//                     'items' => [
+//                         [
+//                             'label' => 'Home',
+//                             'url' => ['site/index'],
+//                         ],
+//                         [
+//                             'label' => 'Dropdown',
+//                             'items' => [
+//                                 ['label' => 'Level 1 - Dropdown A', 'url' => '#'],
+//                                 '<li class="divider"></li>',
+//                                 '<li class="dropdown-header">Dropdown Header</li>',
+//                                 ['label' => 'Level 1 - Dropdown B', 'url' => '#'],
+//                             ],
+//                         ],
+//                         [
+//                             'label' => 'Login',
+//                             'url' => ['site/login'],
+//                             'visible' => Yii::$app->user->isGuest
+//                         ],
+//                     ],
+//                     'options' => ['class' =>'nav-pills'], // set this to nav-tab to get tab-styled navigation
+//                 ]);
+//
+//?>
 
-$modal = Modal::begin(['id' => 'myModal', 'header' => $header, 'footer' => $footer]); ?>
 
-<p>Здесь содержимое модального окна</p>
-
-<?php $modal::end(); ?>
 
 
 <?= Menu::widget(['items' => [['label' => '+ преподавателя', 'url' => ['#'], 'options' => ['href' => Url::to(['#'])]],
