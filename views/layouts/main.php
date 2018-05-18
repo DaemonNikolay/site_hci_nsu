@@ -82,6 +82,8 @@ AppAsset::register($this);
 <footer class="footer">
     <div class="container">
         <p class="pull-left">&copy; ВКИ НГУ (студенческая версия) <?= date('Y') ?></p>
+        <p class="pull-right"><?= Html::a("Разработано: Nikulux", "http://nikulux.ru", ['target' => '_blank',
+                                                                                        'class' => 'developed']); ?></p>
     </div>
 </footer>
 

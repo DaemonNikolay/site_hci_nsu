@@ -96,9 +96,9 @@ a.desc:after {
     border: none;
 }
 
-@media(max-width:767px) {
+@media (max-width: 767px) {
     .nav li > form > button.logout {
-        display:block;
+        display: block;
         text-align: left;
         width: 100%;
         padding: 10px 15px;
@@ -112,4 +112,53 @@ a.desc:after {
 
 .nav > li > form > button.logout:focus {
     outline: none;
+}
+
+/*footer*/
+
+.developed {
+    color: rgb(44, 0, 255);
+    font-family: monospace;
+    box-shadow: 0px 0px 14px rgba(0, 0, 255, 0.5);
+    border-radius: 15px;
+    padding: 0 10px 0 10px;
+}
+
+.developed:hover {
+    text-decoration: none;
+}
+
+.developed::before,
+.developed::after {
+    display: inline-block;
+    opacity: 0;
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.3s, opacity 0.2s;
+    transition: transform 0.3s, opacity 0.2s;
+}
+
+.developed::before {
+    margin-right: 10px;
+    content: '<';
+    -webkit-transform: translateX(20px);
+    -moz-transform: translateX(20px);
+    transform: translateX(20px);
+}
+
+.developed::after {
+    margin-left: 10px;
+    content: '/>';
+    -webkit-transform: translateX(-20px);
+    -moz-transform: translateX(-20px);
+    transform: translateX(-20px);
+}
+
+.developed:hover::before,
+.developed:hover::after,
+.developed:focus::before,
+.developed:focus::after {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    transform: translateX(0px);
 }
