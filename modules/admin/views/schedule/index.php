@@ -8,7 +8,7 @@ use yii\widgets\Pjax;
 /* @var $searchModel app\models\ScheduleSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Schedules';
+$this->title = 'Расписание';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="schedule-index">

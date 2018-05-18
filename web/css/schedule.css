@@ -1,26 +1,66 @@
 .day-schedule {
-    width: 30%;
+    width: 32%;
     float: left;
     margin-right: 20px;
 }
 
 .group-schedule {
-    width: 30%;
+    width: 32%;
 }
 
 .general-schedule {
-    width: 30%;
+    width: 32%;
     float: left;
     margin-right: 15px;
 }
+
 .btn {
     float: left;
 }
 
-.list-group{
+.list-group {
     padding-left: 0;
     margin-bottom: 20px;
     width: 145px;
     margin-left: auto;
     margin-right: 0;
+}
+
+.schedule-form {
+    margin-left: 1%;
+    width: 100%;
+}
+
+.items-schedule {
+    text-align: center;
+    width: 100%;
+}
+
+.teacher-schedule {
+    color: green;
+}
+
+.discipline-schedule {
+    color: blue;
+}
+
+.room-schedule {
+    color: deeppink;
+}
+
+.form-group {
+    margin-bottom: 50px;
+}
+
+.btn {
+    margin-top: 35px;
+}
+
+a.list-group-item:hover {
+    background-color: #dfdfdf;
+
+}
+
+.list-group-item {
+    background-color: #f5f5f5;
 }

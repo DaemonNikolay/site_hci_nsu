@@ -10,7 +10,7 @@ use yii\helpers\Html;
 /* @var $rooms app\models\Schedule */
 /* @var $disciplines app\models\Schedule */
 
-$this->title = 'Create Schedule';
+$this->title = 'Создание расписания';
 $this->params['breadcrumbs'][] = ['label' => 'Schedules', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
