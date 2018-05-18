@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\GroupsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Groups';
+$this->title = 'Группы';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="groups-index">
@@ -16,20 +16,15 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Groups', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Добавить группу', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+    <?= GridView::widget(['dataProvider' => $dataProvider, 'filterModel' => $searchModel,
+                          'columns' => [['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'name',
-            'updated_at',
+                                        ['attribute' => 'name', 'label' => 'Группы', 'value' => 'name',],
+                                        ['attribute' => 'updated_at', 'label' => 'Последнее изменение было...',
+                                         'value' => 'updated_at',],
 
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
+                                        ['class' => 'yii\grid\ActionColumn'],],]); ?>
 </div>

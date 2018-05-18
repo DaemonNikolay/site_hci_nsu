@@ -14,11 +14,9 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="schedule-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-<!--    --><?php //Pjax::begin(); ?>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Schedule', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Добавить расписание', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget(['dataProvider' => $dataProvider, 'filterModel' => $searchModel,

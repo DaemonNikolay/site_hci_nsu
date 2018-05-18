@@ -129,5 +129,5 @@ use yii\bootstrap\Nav;
 
     <?php Pjax::end() ?>
 
-    <?php $this->registerCssFile('/web/css/schedule.css', ['depends' => [AppAsset::className()]]) ?>
+    <?php $this->registerCssFile('/web/css/schedule-create.css', ['depends' => [AppAsset::className()]]) ?>
 </div>
