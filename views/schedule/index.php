@@ -3,19 +3,23 @@
 use yii\helpers\Html;
 use yii\bootstrap\Tabs;
 use app\assets\AppAsset;
+use yii\widgets\ActiveForm;
+use yii\jui\DatePicker;
 
 /* @var $groups app\controllers\ScheduleController */
 /* @var $model app\controllers\ScheduleController */
 
-$this->title = 'Расписание';;
+$this->title = 'Расписание';
 $this->params['breadcrumbs'][] = $this->title;
 
 ?>
 <h1><?= Html::encode($this->title) ?></h1>
-<kbd><?= Html::encode('{сегодня: ' . date("d.m.Y") . '}') ?></kbd>
-
-
 <?php
+
+echo DatePicker::widget(['options' => ['class' => 'form-control'], 'language' => 'ru', 'dateFormat' => 'dd-MM-yyyy',
+                         'value' => date("d.m.Y")]);
+
+
 
 $items = array();
 foreach ($groups as $group) {
@@ -23,8 +27,13 @@ foreach ($groups as $group) {
     $items[] = $temp;
 }
 
-
 echo Tabs::widget(['items' => $items, 'options' => ['class' => 'schedule-for-guest']]);
+
+echo '<br /><br /><br /><br />';
+foreach ($model as $items) {
+    echo $items->for_the_day;
+}
+
 
 //echo Tabs::widget([
 //                      'items' => [
