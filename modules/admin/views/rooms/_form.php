@@ -14,7 +14,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'type')->dropDownList([ 'classic' => 'Classic', 'lecture' => 'Lecture', 'computer' => 'Computer', ], ['prompt' => '']) ?>
+    <?= $form->field($model, 'type')->dropDownList([ 'стандартная' => 'стандартная', 'лекционная' => 'лекционная', 'компьютернаая' => 'компьютернаая', ], ['prompt' => '']) ?>
 
     <?= $form->field($model, 'updated_at')->textInput() ?>
 
