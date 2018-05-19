@@ -4,6 +4,9 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
 use yii\jui\DatePicker;
+use yii\helpers\ArrayHelper;
+use app\models\Groups;
+use app\models\Schedule;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\ScheduleSearch */
@@ -61,11 +64,13 @@ $this->params['breadcrumbs'][] = $this->title;
                                          'attribute' => 'for_the_day', 'options' => ['class' => 'form-control'],
                                          'language' => 'ru', 'dateFormat' => 'yyyy-MM-dd',]),],
 
-        //        ['attribute' => 'for_the_day', 'label' => 'День', 'value' => 'for_the_day'],
-        ['attribute' => 'for_the_group', 'label' => 'Группы', 'value' => 'forTheGroup.name',],
+        ['attribute' => 'for_the_group',
+         'filter' => ArrayHelper::map(Groups::find()->all(), 'id', 'name'),
+         'filterInputOptions' => ['class' => 'form-control form-control-sm'], 'value' => 'forTheGroup.name'],
 
-        [//'header' => 'title', // тут нада как то сказать что отображаем в хедере title & name и позволить сортировку по ним
-         'label' => '№ пары / Дисциплина / преподаватель / аудитория / время',
+        //        ['attribute' => 'for_the_group', 'label' => 'Группы', 'value' => 'forTheGroup.name',],
+
+        ['label' => '№ пары / Дисциплина / преподаватель / аудитория / время',
          // так показывает label и сортировку только по name, если не указать, то хедер пустой
          'format' => 'raw', 'value' => function ($model)
         {
