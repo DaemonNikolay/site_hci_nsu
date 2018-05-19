@@ -34,7 +34,6 @@ AppAsset::register($this);
     <?php
 
     $menuItems = [
-
         ['label' => 'Админская', 'url' => ['/admin/default/index']],
         ['label' => 'Главная', 'url' => ['/site/index/']],
         ['label' => 'Диспетчерская', 'url' => ['#'], 'items'=>[
