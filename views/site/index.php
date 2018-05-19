@@ -7,11 +7,7 @@ $this->title = 'ВКИ НГУ';
 <div class="site-index">
 
     <div class="jumbotron">
-        <h1><?= $this->title ?></h1>
-        <p class="lead">Студенческая версия</p>
-
-        <p><a class="btn btn-lg btn-info" href="/schedule/index">Расписание</a>
-            <a class="btn btn-lg btn-info" href="/news/index">Новости</a></p>
+        <img class="logo" src="/web/images/background/background.png">
     </div>
 
     <div class="body-content">

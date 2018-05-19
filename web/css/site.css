@@ -162,3 +162,22 @@ a.desc:after {
     -moz-transform: translateX(0px);
     transform: translateX(0px);
 }
+
+.logo {
+    width: 100%;
+}
+
+.table-bordered > tbody > tr > td {
+    border: 1px solid #000;
+    font-weight: 900;
+}
+
+.table-bordered, .table-bordered > thead > tr > th, .table-bordered > thead > tr > td {
+    border: 2px solid #000;
+    width: 0;
+    margin: 0 auto;
+}
+
+th, tr {
+    text-align: left;
+}

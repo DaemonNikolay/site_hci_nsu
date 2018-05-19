@@ -23,63 +23,50 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Добавить расписание', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?= GridView::widget(['dataProvider' => $dataProvider, 'filterModel' => $searchModel, 'columns' => [
+    <?= GridView::widget(['dataProvider' => $dataProvider,
+                             'filterModel' => $searchModel,
+                             'columns' => [['class' => 'yii\grid\SerialColumn'],
 
+                                 ['attribute' => 'for_the_day',
+                                     'label' => 'День',
+                                     'filter' => DatePicker::widget(['model' => $searchModel,
+                                                                        'value' => $searchModel->for_the_day,
+                                                                        'attribute' => 'for_the_day',
+                                                                        'options' => ['class' => 'form-control'],
+                                                                        'language' => 'ru',
+                                                                        'dateFormat' => 'yyyy-MM-dd',
+                                                                    ]),
+                                     'format' => ['date', 'l yyyy-MM-dd'],
+                                     'options' => ['width' => '200']
+                                 ],
+                                 ['attribute' => 'for_the_group',
+                                     'label' => 'Группа',
+                                     'filter' => ArrayHelper::map(Groups::find()->all(), 'id', 'name'),
+                                     'filterInputOptions' => ['class' => 'form-control form-control-sm'],
+                                     'value' => 'forTheGroup.name',
+                                     'options' => ['width' => '130']
+                                 ],
 
-        ['attribute' => 'for_the_day', 'label' => 'День',
-         'filter' => DatePicker::widget(['model' => $searchModel, 'value' => $searchModel->for_the_day,
-                                         'attribute' => 'for_the_day', 'options' => ['class' => 'form-control'],
-                                         'language' => 'ru', 'dateFormat' => 'yyyy-MM-dd',]),
-         'format' => ['date', 'l yyyy-MM-dd'], 'options' => ['width' => '170']],
+                                 ['label' => '№ пары / Дисциплина / преподаватель / аудитория / время',
+                                     'format' => 'raw',
+                                     'value' => function ($model)
+                                     {
+                                         $return = '';
+                                         for ($i = 1; $i <= 6; $i++) {
+                                             $temp = (string)$i . ' / ';
+                                             $temp .= $model['session' . (string)$i . 'Discipline']->name . ' / ';
+                                             $temp .= $model['session' . (string)$i . 'Room']->name . ' (' . $model['session' . (string)$i . 'Room']->type . ') /';
+                                             $temp .= $model['session' . (string)$i . 'Teacher']->name . ' ' . mb_strimwidth($model['session' . (string)$i . 'Teacher']->patronymic, 0, 1) . '. ' . mb_strimwidth($model['session' . (string)$i . 'Teacher']->surname, 0, 1) . '. <br />';
 
+                                             $return .= $temp;
+                                         }
 
-        ['attribute' => 'for_the_group', 'label' => 'Группа',
-         'filter' => ArrayHelper::map(Groups::find()->all(), 'id', 'name'),
-         'filterInputOptions' => ['class' => 'form-control form-control-sm'], 'value' => 'forTheGroup.name',
-         'options' => ['width' => '130']],
-
-        ['label' => '№ пары / Дисциплина / преподаватель / аудитория / время',
-         'format' => 'raw', 'value' => function ($model)
-        {
-            $session_1 = '1 / ';
-            $session_1 .= $model['session1Discipline']->name . ' / ';
-            $session_1 .= $model['session1Teacher']->name . ' ' . mb_strimwidth($model['session1Teacher']->patronymic, 0, 1) . '. ' . mb_strimwidth($model['session1Teacher']->surname, 0, 1) . '. / ';
-            $session_1 .= $model['session1Room']->name . ' (' . $model['session1Room']->type . ')<br>';
-
-            $session_2 = '2 / ';
-            $session_2 .= $model['session2Discipline']->name . ' / ';
-            $session_2 .= $model['session2Teacher']->name . ' ' . mb_strimwidth($model['session2Teacher']->patronymic, 0, 1) . '. ' . mb_strimwidth($model['session2Teacher']->surname, 0, 1) . '. / ';
-            $session_2 .= $model['session2Room']->name . ' (' . $model['session2Room']->type . ')<br>';
-
-            $session_3 = '3 / ';
-            $session_3 .= $model['session3Discipline']->name . ' / ';
-            $session_3 .= $model['session3Teacher']->name . ' ' . mb_strimwidth($model['session3Teacher']->patronymic, 0, 1) . '. ' . mb_strimwidth($model['session3Teacher']->surname, 0, 1) . '. / ';
-            $session_3 .= $model['session3Room']->name . ' (' . $model['session3Room']->type . ')<br>';
-
-            $session_4 = '4 / ';
-            $session_4 .= $model['session4Discipline']->name . ' / ';
-            $session_4 .= $model['session4Teacher']->name . ' ' . mb_strimwidth($model['session4Teacher']->patronymic, 0, 1) . '. ' . mb_strimwidth($model['session4Teacher']->surname, 0, 1) . '. / ';
-            $session_4 .= $model['session4Room']->name . ' (' . $model['session4Room']->type . ')<br>';
-
-            $session_5 = '5 / ';
-            $session_5 .= $model['session5Discipline']->name . ' / ';
-            $session_5 .= $model['session5Teacher']->name . ' ' . mb_strimwidth($model['session5Teacher']->patronymic, 0, 1) . '. ' . mb_strimwidth($model['session5Teacher']->surname, 0, 1) . '. / ';
-            $session_5 .= $model['session5Room']->name . ' (' . $model['session5Room']->type . ')<br>';
-
-            $session_6 = '6 / ';
-            $session_6 .= $model['session6Discipline']->name . ' / ';
-            $session_6 .= $model['session6Teacher']->name . ' ' . mb_strimwidth($model['session6Teacher']->patronymic, 0, 1) . '. ' . mb_strimwidth($model['session6Teacher']->surname, 0, 1) . '. / ';
-            $session_6 .= $model['session6Room']->name . ' (' . $model['session6Room']->type . ')<br>';
-
-            $return = $session_1;
-            $return .= $session_2;
-            $return .= $session_3;
-            $return .= $session_4;
-            $return .= $session_5;
-            $return .= $session_6;
-
-            return $return;
-        },],],]); ?>
+                                         return $return;
+                                     },
+                                 ],
+                                 ['class' => 'yii\grid\ActionColumn'],
+                             ],
+                         ]); ?>
 
 
     <!--    --><?php //Pjax::end(); ?>

@@ -67,8 +67,12 @@ class ScheduleController extends Controller
         $rooms = Rooms::find()->all();
         $disciplines = Disciplines::find()->all();
 
-        return $this->render('create', ['groups' => $groups, 'model' => $model, 'teachers' => $teachers,
-                                        'rooms' => $rooms, 'disciplines' => $disciplines]);
+        return $this->render('create', ['groups' => $groups,
+            'model' => $model,
+            'teachers' => $teachers,
+            'rooms' => $rooms,
+            'disciplines' => $disciplines
+        ]);
     }
 
     /**
@@ -86,7 +90,17 @@ class ScheduleController extends Controller
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
-        return $this->render('update', ['model' => $model,]);
+        $groups = Groups::find()->all();
+        $teachers = Teachers::find()->all();
+        $rooms = Rooms::find()->all();
+        $disciplines = Disciplines::find()->all();
+
+        return $this->render('update', ['groups' => $groups,
+            'model' => $model,
+            'teachers' => $teachers,
+            'rooms' => $rooms,
+            'disciplines' => $disciplines
+        ]);
     }
 
     /**
