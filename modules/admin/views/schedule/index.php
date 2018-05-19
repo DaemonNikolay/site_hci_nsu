@@ -23,55 +23,22 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Добавить расписание', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <!--    --><? //= GridView::widget(['dataProvider' => $dataProvider, 'filterModel' => $searchModel,
-    //                          'columns' => [['class' => 'yii\grid\SerialColumn'],
-    //
-    //                                        'id', 'for_the_day',
-    //
-    //                                        ['attribute' => 'for_the_group', 'label' => 'Группы',
-    //                                         'value' => 'forTheGroup.name',],
-    //
-    //                                        //            'for_the_group',
-    //
-    //
-    //
-    //                                        'session_1_discipline',
-    //                                        'session_1_teacher',
-    //                                        'session_1_room',
-    ////                                        'session_2_discipline',
-    ////                                        'session_2_teacher',
-    ////                                        'session_2_room',
-    ////                                        'session_3_discipline',
-    ////                                        'session_3_teacher',
-    ////                                        'session_3_room',
-    ////                                        'session_4_discipline',
-    ////                                        'session_4_teacher',
-    ////                                        'session_4_room',
-    ////                                        'session_5_discipline',
-    ////                                        'session_5_teacher',
-    ////                                        'session_5_room',
-    ////                                        'session_6_discipline',
-    ////                                        'session_6_teacher',
-    ////                                        'session_6_room',
-    ////                                        'updated_at',
-    //
-    //                                        ['class' => 'yii\grid\ActionColumn'],],]); ?>
-
     <?= GridView::widget(['dataProvider' => $dataProvider, 'filterModel' => $searchModel, 'columns' => [
 
-        ['attribute' => 'for_the_day',
+
+        ['attribute' => 'for_the_day', 'label' => 'День',
          'filter' => DatePicker::widget(['model' => $searchModel, 'value' => $searchModel->for_the_day,
                                          'attribute' => 'for_the_day', 'options' => ['class' => 'form-control'],
-                                         'language' => 'ru', 'dateFormat' => 'yyyy-MM-dd',]),],
+                                         'language' => 'ru', 'dateFormat' => 'yyyy-MM-dd',]),
+         'format' => ['date', 'l yyyy-MM-dd'], 'options' => ['width' => '170']],
 
-        ['attribute' => 'for_the_group',
+
+        ['attribute' => 'for_the_group', 'label' => 'Группа',
          'filter' => ArrayHelper::map(Groups::find()->all(), 'id', 'name'),
-         'filterInputOptions' => ['class' => 'form-control form-control-sm'], 'value' => 'forTheGroup.name'],
-
-        //        ['attribute' => 'for_the_group', 'label' => 'Группы', 'value' => 'forTheGroup.name',],
+         'filterInputOptions' => ['class' => 'form-control form-control-sm'], 'value' => 'forTheGroup.name',
+         'options' => ['width' => '130']],
 
         ['label' => '№ пары / Дисциплина / преподаватель / аудитория / время',
-         // так показывает label и сортировку только по name, если не указать, то хедер пустой
          'format' => 'raw', 'value' => function ($model)
         {
             $session_1 = '1 / ';
