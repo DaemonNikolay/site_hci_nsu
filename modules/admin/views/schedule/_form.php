@@ -43,7 +43,7 @@ use yii\bootstrap\Nav;
 
     <?= $form->field($model, 'for_the_day', ['options' => ['class' => 'day-schedule']])
              ->widget(DatePicker::classname(), ['options' => ['class' => 'form-control'], 'language' => 'ru',
-                                                'dateFormat' => 'dd.MM.yyyy',])->label('День занятий') ?>
+                                                'dateFormat' => 'yyyy-MM-dd',])->label('День занятий') ?>
 
     <?= $form->field($model, 'for_the_group')
              ->dropDownList(ArrayHelper::map($groups, 'id', 'name'), ['class' => 'form-control group-schedule'])

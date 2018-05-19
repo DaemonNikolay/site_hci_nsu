@@ -5,6 +5,7 @@ use yii\bootstrap\Tabs;
 use app\assets\AppAsset;
 use yii\widgets\ActiveForm;
 use yii\jui\DatePicker;
+use yii\helpers\ArrayHelper;
 
 /* @var $groups app\controllers\ScheduleController */
 /* @var $model app\controllers\ScheduleController */
@@ -16,23 +17,34 @@ $this->params['breadcrumbs'][] = $this->title;
 <h1><?= Html::encode($this->title) ?></h1>
 <?php
 
-echo DatePicker::widget(['options' => ['class' => 'form-control'], 'language' => 'ru', 'dateFormat' => 'dd-MM-yyyy',
-                         'value' => date("d.m.Y")]);
+echo '<pre>';
+foreach ($model as $item){
+    var_dump( $item->for_the_group);
+//    $groups->id = $item->for_the_group;
 
-
-
-$items = array();
-foreach ($groups as $group) {
-    $temp = array('label' => $group->name, 'content' => 'test ' . $group->name);
-    $items[] = $temp;
 }
+echo '</pre>';
 
-echo Tabs::widget(['items' => $items, 'options' => ['class' => 'schedule-for-guest']]);
 
-echo '<br /><br /><br /><br />';
-foreach ($model as $items) {
-    echo $items->for_the_day;
-}
+
+
+//echo DatePicker::widget(['options' => ['class' => 'form-control'], 'language' => 'ru', 'dateFormat' => 'dd-MM-yyyy',
+//                         'value' => date("d.m.Y")]);
+
+
+
+//$items = array();
+//foreach ($groups as $group) {
+//    $temp = array('label' => $group->name, 'content' => 'test ' . $group->name);
+//    $items[] = $temp;
+//}
+//
+//echo Tabs::widget(['items' => $items, 'options' => ['class' => 'schedule-for-guest']]);
+//
+//echo '<br /><br /><br /><br />';
+//foreach ($model as $items) {
+//    echo $items->for_the_day;
+//}
 
 
 //echo Tabs::widget([
