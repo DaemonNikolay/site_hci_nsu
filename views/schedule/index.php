@@ -39,11 +39,11 @@ $this->params['breadcrumbs'][] = $this->title;
                                  'options' => ['width' => '200']
                              ],
 
-
                              ['attribute' => 'for_the_group',
                                  'label' => 'Группа',
-                                 'filter' => ArrayHelper::map(Groups::find()->all(), 'id', 'name'),
-                                 'filterInputOptions' => ['class' => 'form-control form-control-sm'],
+                                 'filter' => Html::activeDropDownList($searchModel, 'for_the_group',
+                                                                      ArrayHelper::map(Groups::find()->all(), 'id', 'name'),
+                                                                      ['class' => 'form-control form-control-sm', 'prompt'=>'Все']),
                                  'value' => 'forTheGroup.name',
                                  'options' => ['width' => '130']
                              ],
