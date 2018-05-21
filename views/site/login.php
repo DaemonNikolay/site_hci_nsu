@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
+use yii\captcha\Captcha;
 
 /* @var $this yii\web\View */
 /* @var $form yii\bootstrap\ActiveForm */
@@ -19,10 +20,9 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="col-lg-5">
             <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
             <?= $form->field($model, 'username') ?>
-            <?= $form->field($model, 'password')
-                     ->passwordInput() ?>
-            <?= $form->field($model, 'rememberMe')
-                     ->checkbox() ?>
+            <?= $form->field($model, 'password')->passwordInput() ?>
+            <?= $form->field($model, 'rememberMe')->checkbox() ?>
+            <?= $form->field($model, 'captcha')->widget(Captcha::className()) ?>
             <div style="color:#999;margin:1em 0">
                 If you forgot your password you can <?= Html::a('reset it', ['user/request-password-reset']) ?>.
                 For new user you can <?= Html::a('signup', ['user/signup']) ?>.

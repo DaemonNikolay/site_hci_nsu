@@ -27,7 +27,8 @@ $this->params['breadcrumbs'][] = $this->title;
                              ['attribute' => 'for_the_day',
                                  'label' => 'День',
                                  'filter' => DatePicker::widget(['model' => $searchModel,
-                                                                    'value' => $searchModel->for_the_day,
+//                                                                    'value' => $searchModel->for_the_day,
+                                                                    'value' => 'yyyy-MM-dd',
                                                                     'attribute' => 'for_the_day',
                                                                     'options' => ['class' => 'form-control'],
                                                                     'language' => 'ru',
@@ -36,7 +37,8 @@ $this->params['breadcrumbs'][] = $this->title;
                                  'format' => ['date',
                                      'l yyyy-MM-dd'
                                  ],
-                                 'options' => ['width' => '200']
+
+                                 'options' => ['width' => '200', ]
                              ],
 
                              ['attribute' => 'for_the_group',

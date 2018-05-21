@@ -59,6 +59,9 @@ $config = [
     ],
 
     'modules' => [
+        'gallery' => [
+            'class' => 'onmotion\gallery\Module',
+        ],
         'admin' => [
             'class' => 'app\modules\admin\Module',
         ],
