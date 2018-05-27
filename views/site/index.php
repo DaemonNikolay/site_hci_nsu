@@ -14,7 +14,7 @@ $this->title = 'ВКИ НГУ';
                 <div class="slide-text">
                     <h2 class="main">Учебное расписание</h2>
                     <p>... в новом формате</p>
-                    <a href="/schedule" class="main btn btn-info">Расписание</a>
+                    <a href="/schedule" class="main btn btn-common">Расписание</a>
                 </div>
                 <img src="/web/assets_main/images/home/slider/hill2.png" class="slider-hill" alt="slider image">
                 <!--                <img src="/web/assets_main/images/home/slider/house2.png" class="slider-house" alt="slider image">-->
@@ -32,31 +32,28 @@ $this->title = 'ВКИ НГУ';
             <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="300ms">
                 <div class="single-service">
                     <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="300ms">
-                        <img src="/web/assets_main/images/home/icon1.png" alt="">
+                        <img src="/web/assets_main/images/home/icon_news.png" alt="">
                     </div>
-                    <h2>Incredibly Responsive</h2>
-                    <p>Ground round tenderloin flank shank ribeye. Hamkevin meatball swine. Cow shankle beef sirloin
-                        chicken ground round.</p>
+                    <h2>Новость 1</h2>
+                    <p>Краткое описание новости 1</p>
                 </div>
             </div>
             <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
                 <div class="single-service">
                     <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="600ms">
-                        <img src="/web/assets_main/images/home/icon2.png" alt="">
+                        <img src="/web/assets_main/images/home/icon_news.png" alt="">
                     </div>
-                    <h2>Superior Typography</h2>
-                    <p>Hamburger ribeye drumstick turkey, strip steak sausage ground round shank pastrami beef brisket
-                        pancetta venison.</p>
+                    <h2>Новость 2</h2>
+                    <p>Краткое описание новости 2</p>
                 </div>
             </div>
             <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="900ms">
                 <div class="single-service">
                     <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="900ms">
-                        <img src="/web/assets_main/images/home/icon3.png" alt="">
+                        <img src="/web/assets_main/images/home/icon_news.png" alt="">
                     </div>
-                    <h2>Swift Page Builder</h2>
-                    <p>Venison tongue, salami corned beef ball tip meatloaf bacon. Fatback pork belly bresaola
-                        tenderloin bone pork kevin shankle.</p>
+                    <h2>Новость 3</h2>
+                    <p>Краткое описание новости 3</p>
                 </div>
             </div>
         </div>
@@ -91,7 +88,7 @@ $this->title = 'ВКИ НГУ';
         <div class="row">
             <div class="single-features">
                 <div class="col-sm-5 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
-                    <img src="/web/assets_main/images/home/image1.png" class="img-responsive" alt="">
+                    <img src="/web/assets_main/images/home/image_hcinsu.png" class="img-responsive" alt="">
                 </div>
                 <div class="col-sm-6 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
                     <h2>Летняя школа</h2>
@@ -103,7 +100,7 @@ $this->title = 'ВКИ НГУ';
             </div>
             <div class="single-features">
                 <div class="col-sm-5 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
-                    <img src="/web/assets_main/images/home/image1.png" class="img-responsive" alt="">
+                    <img src="/web/assets_main/images/home/image_hcinsu.png" class="img-responsive" alt="">
                 </div>
                 <div class="col-sm-6 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
                     <h2>Вечерняя школа</h2>
@@ -124,35 +121,35 @@ $this->title = 'ВКИ НГУ';
             <div class="col-sm-12">
                 <div class="clients text-center wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
                     <p><img src="/web/assets_main/images/home/clients2.png" class="img-responsive" alt=""></p>
-                    <h1 class="title">Партнёры</h1>
+                    <h1 class="title">Компании-коллеги</h1>
                     <p>Наши студенты успешно устраиваются после обучения в крупные IT-компании</p>
                 </div>
-                <div class="clients-logo wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
-                    <div class="col-xs-3 col-sm-2">
-                        <a href="#"><img src="/web/assets_main/images/home/client1.png" class="img-responsive"
-                                         alt=""></a>
-                    </div>
-                    <div class="col-xs-3 col-sm-2">
-                        <a href="#"><img src="/web/assets_main/images/home/client2.png" class="img-responsive"
-                                         alt=""></a>
-                    </div>
-                    <div class="col-xs-3 col-sm-2">
-                        <a href="#"><img src="/web/assets_main/images/home/client3.png" class="img-responsive"
-                                         alt=""></a>
-                    </div>
-                    <div class="col-xs-3 col-sm-2">
-                        <a href="#"><img src="/web/assets_main/images/home/client4.png" class="img-responsive"
-                                         alt=""></a>
-                    </div>
-                    <div class="col-xs-3 col-sm-2">
-                        <a href="#"><img src="/web/assets_main/images/home/client5.png" class="img-responsive"
-                                         alt=""></a>
-                    </div>
-                    <div class="col-xs-3 col-sm-2">
-                        <a href="#"><img src="/web/assets_main/images/home/client6.png" class="img-responsive"
-                                         alt=""></a>
-                    </div>
-                </div>
+<!--                <div class="clients-logo wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">-->
+<!--                    <div class="col-xs-3 col-sm-2">-->
+<!--                        <a href="#"><img src="/web/assets_main/images/home/client1.png" class="img-responsive"-->
+<!--                                         alt=""></a>-->
+<!--                    </div>-->
+<!--                    <div class="col-xs-3 col-sm-2">-->
+<!--                        <a href="#"><img src="/web/assets_main/images/home/client2.png" class="img-responsive"-->
+<!--                                         alt=""></a>-->
+<!--                    </div>-->
+<!--                    <div class="col-xs-3 col-sm-2">-->
+<!--                        <a href="#"><img src="/web/assets_main/images/home/client3.png" class="img-responsive"-->
+<!--                                         alt=""></a>-->
+<!--                    </div>-->
+<!--                    <div class="col-xs-3 col-sm-2">-->
+<!--                        <a href="#"><img src="/web/assets_main/images/home/client4.png" class="img-responsive"-->
+<!--                                         alt=""></a>-->
+<!--                    </div>-->
+<!--                    <div class="col-xs-3 col-sm-2">-->
+<!--                        <a href="#"><img src="/web/assets_main/images/home/client5.png" class="img-responsive"-->
+<!--                                         alt=""></a>-->
+<!--                    </div>-->
+<!--                    <div class="col-xs-3 col-sm-2">-->
+<!--                        <a href="#"><img src="/web/assets_main/images/home/client6.png" class="img-responsive"-->
+<!--                                         alt=""></a>-->
+<!--                    </div>-->
+<!--                </div>-->
             </div>
         </div>
     </div>

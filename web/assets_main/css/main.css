@@ -77,8 +77,8 @@ h3 {
 
 .btn-common {
     font-size: 14px;
-    color: #0099ae;
-    border: 1px solid #0099ae;
+    color: #01007a;
+    border: 1px solid #0030ff;
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     padding: 10px 25px;
@@ -733,6 +733,12 @@ ul.sub-menu {
 }
 
 .index-news {
+    color: #727272;
+    font-family: ‘Raleway’, sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 36px;
+    margin: 0 0 24px;
     text-align: center;
 }
 
@@ -783,7 +789,8 @@ h2.main {
 }
 
 .single-service img {
-    height: 85px;
+    height: 250px;
+    width: 300px;
 }
 
 .tour-button {
