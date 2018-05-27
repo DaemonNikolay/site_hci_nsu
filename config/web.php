@@ -85,6 +85,7 @@ $config = [
             'site/*',
             'debug/*',
             'schedule/index',
+//            'web/assets_main',
         ],
     ],
 
