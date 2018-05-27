@@ -44,11 +44,13 @@ MainAsset::register($this);
         ]) : ('<li>' . Html::beginForm(['/site/logout'], 'post') . Html::submitButton('Выйти (' . Yii::$app->user->identity->username . ')', ['class' => 'btn btn-link logout']) . Html::endForm() . '</li>')
     ];
 
-    NavBar::begin(['brandLabel' => Yii::$app->name,
+    NavBar::begin([
+                      'brandLabel' => Yii::$app->name,
                       'brandUrl' => Yii::$app->homeUrl,
-                      'options' => ['class' => 'navbar-inverse navbar-fixed-top',
+                      'options' => ['class' => 'navbar navbar-inverse',
                       ],
                   ]);
+
 
     echo Nav::widget(['options' => ['class' => 'navbar-nav navbar-right'],
                          'items' => $menuItems,
