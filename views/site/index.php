@@ -5,20 +5,19 @@
 $this->title = 'ВКИ НГУ';
 ?>
 
+<img src="/web/images/background/background1.png" class="logo" alt="logo HCI NSU">
+
 <section id="home-slider">
     <div class="container">
         <div class="row">
             <div class="main-slider">
                 <div class="slide-text">
-                    <h1>ВКИ НГУ</h1>
-                    <p>Высший Колледж Информатики новосибирского государственного университета</p>
-                    <a href="/schedule" class="btn btn-common">Расписание</a>
+                    <h2 class="main">Учебное расписание</h2>
+                    <p>... в новом формате</p>
+                    <a href="/schedule" class="main btn btn-info">Расписание</a>
                 </div>
                 <img src="/web/assets_main/images/home/slider/hill2.png" class="slider-hill" alt="slider image">
-                <img src="/web/assets_main/images/home/slider/house2.png" class="slider-house" alt="slider image">
-                <!--                <img src="/web/assets_main/images/home/slider/sun.png" class="slider-sun" alt="slider image">-->
-                <!--                <img src="/web/assets_main/images/home/slider/birds1.png" class="slider-birds1" alt="slider image">-->
-                <!--                <img src="/web/assets_main/images/home/slider/birds2.png" class="slider-birds2" alt="slider image">-->
+                <!--                <img src="/web/assets_main/images/home/slider/house2.png" class="slider-house" alt="slider image">-->
             </div>
         </div>
     </div>
