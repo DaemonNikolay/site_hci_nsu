@@ -74,7 +74,14 @@ $config = [
             ],
             'layout' => 'left-menu',
             'mainLayout' => '@app/views/layouts/admin.php',
-        ]
+        ],
+        'redactor' => 'yii\redactor\RedactorModule',
+//        'redactor' => [
+//            'class' => 'yii\redactor\RedactorModule',
+//            'uploadDir' => 'web/content/',
+//            'uploadUrl' => '@web/path/to/uploadfolder',
+//            'imageAllowExtensions'=>['jpg','png','gif']
+//        ],
     ],
     'as access' => [
         'class' => 'mdm\admin\components\AccessControl',
