@@ -11,6 +11,7 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 use mdm\admin\components\Helper;
+use pceuropa\menu\Menu;
 
 AppAsset::register($this);
 ?>
@@ -55,6 +56,7 @@ AppAsset::register($this);
 
     echo Nav::widget(['options' => ['class' => 'navbar-nav navbar-right'], 'items' => Helper::filter($menuItems),]);
     NavBar::end();
+
 
     ?>
 

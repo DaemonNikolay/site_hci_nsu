@@ -17,7 +17,6 @@ $this->title = 'ВКИ НГУ';
                     <a href="/schedule" class="main btn btn-common">Расписание</a>
                 </div>
                 <img src="/web/assets_main/images/home/slider/hill2.png" class="slider-hill" alt="slider image">
-                <!--                <img src="/web/assets_main/images/home/slider/house2.png" class="slider-house" alt="slider image">-->
             </div>
         </div>
     </div>
@@ -68,7 +67,9 @@ $this->title = 'ВКИ НГУ';
                 <div class="action take-tour">
                     <div class="col-sm-7 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
                         <h1 class="title">Абитуриент!</h1>
-                        <p>Хочешь обучаться среди лучших? Научиться писать современный мир? <br/> Тогда поступай к нам!
+                        <p>
+                            Хочешь обучаться среди лучших? Научиться создавать современный мир? <br/>
+                            <b>Тогда поступай к нам!</b>
                         </p>
                     </div>
                     <div class="col-sm-5 text-center wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
@@ -92,7 +93,7 @@ $this->title = 'ВКИ НГУ';
                 </div>
                 <div class="col-sm-6 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
                     <h2>Летняя школа</h2>
-                    <p>Обучение основам программирования и IT-навыкам школьников летом</p>
+                    <p>Обучение основам программирования и IT-навыкам школьников в период летних каникул</p>
                     <div class="school-button">
                         <a href="#" class="btn btn-common">Летняя школа</a>
                     </div>
@@ -121,35 +122,35 @@ $this->title = 'ВКИ НГУ';
             <div class="col-sm-12">
                 <div class="clients text-center wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
                     <p><img src="/web/assets_main/images/home/clients2.png" class="img-responsive" alt=""></p>
-                    <h1 class="title">Компании-коллеги</h1>
-                    <p>Наши студенты успешно устраиваются после обучения в крупные IT-компании</p>
+                    <h1 class="title">Компании-партнёры</h1>
+                    <p>Наши студенты успешно устраиваются после обучения в различные IT-компании</p>
                 </div>
-<!--                <div class="clients-logo wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">-->
-<!--                    <div class="col-xs-3 col-sm-2">-->
-<!--                        <a href="#"><img src="/web/assets_main/images/home/client1.png" class="img-responsive"-->
-<!--                                         alt=""></a>-->
-<!--                    </div>-->
-<!--                    <div class="col-xs-3 col-sm-2">-->
-<!--                        <a href="#"><img src="/web/assets_main/images/home/client2.png" class="img-responsive"-->
-<!--                                         alt=""></a>-->
-<!--                    </div>-->
-<!--                    <div class="col-xs-3 col-sm-2">-->
-<!--                        <a href="#"><img src="/web/assets_main/images/home/client3.png" class="img-responsive"-->
-<!--                                         alt=""></a>-->
-<!--                    </div>-->
-<!--                    <div class="col-xs-3 col-sm-2">-->
-<!--                        <a href="#"><img src="/web/assets_main/images/home/client4.png" class="img-responsive"-->
-<!--                                         alt=""></a>-->
-<!--                    </div>-->
-<!--                    <div class="col-xs-3 col-sm-2">-->
-<!--                        <a href="#"><img src="/web/assets_main/images/home/client5.png" class="img-responsive"-->
-<!--                                         alt=""></a>-->
-<!--                    </div>-->
-<!--                    <div class="col-xs-3 col-sm-2">-->
-<!--                        <a href="#"><img src="/web/assets_main/images/home/client6.png" class="img-responsive"-->
-<!--                                         alt=""></a>-->
-<!--                    </div>-->
-<!--                </div>-->
+                <div class="clients-logo wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
+                    <div class="col-xs-3 col-sm-2">
+                        <a href="#"><img src="/web/assets_main/images/home/client11.png" class="img-responsive"
+                                         alt=""></a>
+                    </div>
+                    <div class="col-xs-3 col-sm-2">
+                        <a href="#"><img src="/web/assets_main/images/home/client11.png" class="img-responsive"
+                                         alt=""></a>
+                    </div>
+                    <div class="col-xs-3 col-sm-2">
+                        <a href="#"><img src="/web/assets_main/images/home/client11.png" class="img-responsive"
+                                         alt=""></a>
+                    </div>
+                    <div class="col-xs-3 col-sm-2">
+                        <a href="#"><img src="/web/assets_main/images/home/client11.png" class="img-responsive"
+                                         alt=""></a>
+                    </div>
+                    <div class="col-xs-3 col-sm-2">
+                        <a href="#"><img src="/web/assets_main/images/home/client11.png" class="img-responsive"
+                                         alt=""></a>
+                    </div>
+                    <div class="col-xs-3 col-sm-2">
+                        <a href="#"><img src="/web/assets_main/images/home/client11.png" class="img-responsive"
+                                         alt=""></a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

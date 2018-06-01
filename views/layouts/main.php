@@ -4,12 +4,14 @@
 
 /* @var $content string */
 
-use app\widgets\Alert;
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\MainAsset;
+use app\widgets\Alert;
+use mdm\admin\components\Helper;
+use pceuropa\menu\Menu;
 
 MainAsset::register($this);
 ?>
@@ -44,18 +46,17 @@ MainAsset::register($this);
         ]) : ('<li>' . Html::beginForm(['/site/logout'], 'post') . Html::submitButton('Выйти (' . Yii::$app->user->identity->username . ')', ['class' => 'btn btn-link logout']) . Html::endForm() . '</li>')
     ];
 
-    NavBar::begin([
-                      'brandLabel' => Yii::$app->name,
-                      'brandUrl' => Yii::$app->homeUrl,
-                      'options' => ['class' => 'navbar navbar-inverse',
-                      ],
-                  ]);
+            NavBar::begin(['brandLabel' => Yii::$app->name,
+                              'brandUrl' => Yii::$app->homeUrl,
+                              'options' => ['class' => 'navbar navbar-inverse',
+                              ],
+                          ]);
 
 
-    echo Nav::widget(['options' => ['class' => 'navbar-nav navbar-right'],
-                         'items' => $menuItems,
-                     ]);
-    NavBar::end();
+            echo Nav::widget(['options' => ['class' => 'navbar-nav navbar-right'],
+                                 'items' => $menuItems,
+                             ]);
+            NavBar::end();
     ?>
 
     <div class="container">
@@ -76,10 +77,10 @@ MainAsset::register($this);
             </div>
             <div class="col-md-4 col-sm-6">
                 <div class="testimonial bottom">
-<!--                    <h2>Кто не работает - тот ест!</h2>-->
-<!--                    <h2>Учись студент!</h2>-->
+                    <!--                    <h2>Кто не работает - тот ест!</h2>-->
+                    <!--                    <h2>Учись студент!</h2>-->
                     <img src="/web/assets_main/images/home/umor.jpg" class="img-responsive inline" alt="umor>
-                   <div class="media">
+                   <div class=" media">
 
                 </div>
             </div>
@@ -102,15 +103,17 @@ MainAsset::register($this);
             <div class="col-md-4 col-sm-12">
                 <div class="contact-form bottom">
                     <h2>Связаться с нами (отключено)</h2>
-                    <form id="main-contact-form" name="contact-form" method="post" action="sendemail.php">
+                    <form id="main-contact-form" name="contact-form">
                         <div class="form-group">
                             <input type="text" name="name" class="form-control" required="required" placeholder="Имя">
                         </div>
                         <div class="form-group">
-                            <input type="email" name="email" class="form-control" required="required" placeholder="e-mail">
+                            <input type="email" name="email" class="form-control" required="required"
+                                   placeholder="E-mail">
                         </div>
                         <div class="form-group">
-                            <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Ваше сообщение..."></textarea>
+                            <textarea name="message" id="message" required="required" class="form-control" rows="8"
+                                      placeholder="Ваше сообщение..."></textarea>
                         </div>
                         <div class="form-group">
                             <input type="submit" name="submit" class="btn btn-submit" value="Отправить">

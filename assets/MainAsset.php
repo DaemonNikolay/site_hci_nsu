@@ -24,7 +24,7 @@ class MainAsset extends AssetBundle
         "web/assets_main/js/bootstrap.min.js",
         "web/assets_main/js/lightbox.min.js",
         "web/assets_main/js/wow.min.js",
-        "web/assets_main/js/main.js",  
+        "web/assets_main/js/main.js",
     ];
 
     public $depends = [

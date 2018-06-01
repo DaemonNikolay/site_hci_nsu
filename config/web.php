@@ -57,7 +57,6 @@ $config = [
             'class' => 'yii\rbac\DbManager', // or use 'yii\rbac\DbManager'
         ]
     ],
-
     'modules' => [
         'admin' => [
             'class' => 'app\modules\admin\Module',
@@ -67,7 +66,6 @@ $config = [
             'controllerMap' => [
                 'assignment' => [
                     'class' => 'mdm\admin\controllers\AssignmentController',
-                    /* 'userClassName' => 'app\models\User', */
                     'idField' => 'id',
                     'usernameField' => 'username',
                 ],
@@ -76,23 +74,13 @@ $config = [
             'mainLayout' => '@app/views/layouts/admin.php',
         ],
         'redactor' => 'yii\redactor\RedactorModule',
-//        'redactor' => [
-//            'class' => 'yii\redactor\RedactorModule',
-//            'uploadDir' => 'web/content/',
-//            'uploadUrl' => '@web/path/to/uploadfolder',
-//            'imageAllowExtensions'=>['jpg','png','gif']
-//        ],
     ],
     'as access' => [
         'class' => 'mdm\admin\components\AccessControl',
         'allowActions' => [
-//            'site/index',
-//            'site/login',
-//            'site/logout',
             'site/*',
             'debug/*',
             'schedule/index',
-//            'web/assets_main',
         ],
     ],
 
