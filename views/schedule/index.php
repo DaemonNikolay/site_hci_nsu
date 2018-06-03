@@ -8,73 +8,96 @@ use yii\jui\DatePicker;
 use yii\helpers\ArrayHelper;
 use yii\grid\GridView;
 use app\models\Groups;
+use app\models\Disciplines;
+use app\models\Rooms;
+use app\models\Teachers;
 
 /* @var $groups app\controllers\ScheduleController */
-/* @var $model app\controllers\ScheduleController */
+/* @var $schedule app\controllers\ScheduleController */
 /* @var $searchModel app\models\ScheduleSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Расписание';
 $this->params['breadcrumbs'][] = $this->title;
 
+$date = new DateTime();
+
+
 ?>
     <h1><?= Html::encode($this->title) ?></h1>
+    <code><?= 'Сегодня: ' . $date->format('d.m') . ', ' . translateDayToRus($date->format('w')) . ', ' . whatWeek($date->format('W')); ?></code>
+<?php
 
-<?= GridView::widget(['dataProvider' => $dataProvider,
-                         'filterModel' => $searchModel,
-                         'columns' => [['class' => 'yii\grid\SerialColumn'],
+$filter_schedule = array(['label' => 'Расписание',
+                          'content' => '<h2>Догадываешься ли, что ждёт тебя?</h2>',
+                          'active' => true]);
 
-                             ['attribute' => 'for_the_day',
-                                 'label' => 'День',
-                                 'filter' => DatePicker::widget(['model' => $searchModel,
-//                                                                    'value' => $searchModel->for_the_day,
-                                                                    'value' => 'yyyy-MM-dd',
-                                                                    'attribute' => 'for_the_day',
-                                                                    'options' => ['class' => 'form-control'],
-                                                                    'language' => 'ru',
-                                                                    'dateFormat' => 'yyyy-MM-dd',
-                                                                ]),
-                                 'format' => ['date',
-                                     'l yyyy-MM-dd'
-                                 ],
+$study_time = array('09:00 - 10:35',
+                    '10:45 - 12:20',
+                    '12:45 - 14:20',
+                    '14:30 - 16:05',
+                    '16:15 - 17:50',
+                    '18:00 - 19:35');
+$tables = array();
 
-                                 'options' => ['width' => '200', ]
-                             ],
+foreach ($schedule as $element) {
+    $table = "<table class=\"table\">";
+    $table .= "<caption>" . $element['day_of_week'] . " (" . mb_strtolower($element['status_week']) . ") <code> изменялось: " . $element['updated_at'] . "</code></caption>";
+    $table .= "<thead>";
+    $table .= "<tr>";
+    $table .= "<th>#</th>";
+    $table .= "<th>Дисциплина</th>";
+    $table .= "<th>Аудитория</th>";
+    $table .= "<th>Преподаватель</th>";
+    $table .= "<th>Время</th>";
+    $table .= "</tr>";
+    $table .= "</thead>";
+    $table .= "<tbody>";
 
-                             ['attribute' => 'for_the_group',
-                                 'label' => 'Группа',
-                                 'filter' => Html::activeDropDownList($searchModel, 'for_the_group', ArrayHelper::map(Groups::find()
-                                                                                                                            ->all(), 'id', 'name'), ['class' => 'form-control form-control-sm',
-                                                                          'prompt' => 'Все'
-                                                                      ]),
-                                 'value' => 'forTheGroup.name',
-                                 'options' => ['width' => '130']
-                             ],
+    for ($i = 1; $i <= 6; $i++) {
+        $table .= "<tr>";
+        $table .= "<th scope=\"row\">" . $i . "</th>";
+        $table .= "<td>" . Disciplines::find()
+                                      ->select('name')
+                                      ->where(['id' => $element['session_' . $i . '_discipline']])
+                                      ->one()->name . "</td>";
+        $table .= "<td>" . Rooms::find()
+                                ->select('name')
+                                ->where(['id' => $element['session_' . $i . '_room']])
+                                ->one()->name . "</td>" . "</td>";
+        $table .= "<td>" . Teachers::find()
+                                   ->select('name')
+                                   ->where(['id' => $element['session_' . $i . '_teacher']])
+                                   ->one()->name . "</td>" . "</td>";
+        $table .= "<td>" . $study_time[$i - 1] . "</td>";
+        $table .= "</tr>";
+    }
 
-                             ['label' => '№ пары / Дисциплина / преподаватель / аудитория / время',
-                                 'format' => 'raw',
-                                 'value' => function ($model)
-                                 {
-                                     $return = '';
-                                     for ($i = 1; $i <= 6; $i++) {
-                                         $temp = (string)$i . ' / ';
-                                         if (count($model['session' . (string)$i . 'Discipline']->name) == 0) {
-                                             $temp .= notFound() . ' / ';
-                                             $temp .= notFound() . ' / ';
-                                             $temp .= notFound() . '<br />';
-                                         } else {
-                                             $temp .= $model['session' . (string)$i . 'Discipline']->name . ' / ';
-                                             $temp .= $model['session' . (string)$i . 'Room']->name . ' (' . $model['session' . (string)$i . 'Room']->type . ') / ';
-                                             $temp .= $model['session' . (string)$i . 'Teacher']->name . ' ' . mb_strimwidth($model['session' . (string)$i . 'Teacher']->patronymic, 0, 1) . '. ' . mb_strimwidth($model['session' . (string)$i . 'Teacher']->surname, 0, 1) . '. <br />';
-                                         }
-                                         $return .= $temp;
-                                     }
+    $table .= "<tbody>";
+    $table .= "</table>";
 
-                                     return $return;
-                                 },
-                             ],
-                         ],
-                     ]); ?>
+    $number_group = Groups::find()->select('name')->where(['id' => $element['training_group']])->one()->name;
+
+    $tables[$number_group][] = $table;
+}
+
+
+foreach ($tables as $key => $value) {
+
+    $tables_to_string = "";
+    foreach ($value as $element) {
+        $tables_to_string .= $element;
+    }
+
+    $temp = ['label' => $key,
+             'content' => $tables_to_string];
+
+    array_push($filter_schedule, $temp);
+}
+
+?>
+
+<?= Tabs::widget(['items' => $filter_schedule]); ?>
 
 <?php $this->registerCssFile('/web/css/schedule-guest.css', ['depends' => [AppAsset::className()]]) ?>
 
@@ -83,6 +106,22 @@ $this->params['breadcrumbs'][] = $this->title;
 function notFound()
 {
     return 'Отсутствует';
+}
+
+function translateDayToRus($i)
+{
+    $days = array('Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Восресенье');
+
+    return $days[$i];
+}
+
+function whatWeek($number_week)
+{
+    if ($number_week % 2 == 0) {
+        return 'Чётная неделя';
+    }
+
+    return 'Нечётная неделя';
 }
 
 ?>

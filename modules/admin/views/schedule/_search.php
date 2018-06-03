@@ -13,16 +13,13 @@ use yii\widgets\ActiveForm;
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
         'method' => 'get',
-        'options' => [
-            'data-pjax' => 1
-        ],
     ]); ?>
 
-    <?= $form->field($model, 'id') ?>
+    <?= $form->field($model, 'training_group') ?>
 
-    <?= $form->field($model, 'for_the_day') ?>
+    <?= $form->field($model, 'day_of_week') ?>
 
-    <?= $form->field($model, 'for_the_group') ?>
+    <?= $form->field($model, 'status_week') ?>
 
     <?= $form->field($model, 'session_1_discipline') ?>
 

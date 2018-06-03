@@ -18,8 +18,8 @@ class ScheduleSearch extends Schedule
     public function rules()
     {
         return [
-            [['id', 'for_the_group', 'session_1_discipline', 'session_1_teacher', 'session_1_room', 'session_2_discipline', 'session_2_teacher', 'session_2_room', 'session_3_discipline', 'session_3_teacher', 'session_3_room', 'session_4_discipline', 'session_4_teacher', 'session_4_room', 'session_5_discipline', 'session_5_teacher', 'session_5_room', 'session_6_discipline', 'session_6_teacher', 'session_6_room'], 'integer'],
-            [['for_the_day', 'updated_at'], 'safe'],
+            [['training_group', 'session_1_discipline', 'session_1_teacher', 'session_1_room', 'session_2_discipline', 'session_2_teacher', 'session_2_room', 'session_3_discipline', 'session_3_teacher', 'session_3_room', 'session_4_discipline', 'session_4_teacher', 'session_4_room', 'session_5_discipline', 'session_5_teacher', 'session_5_room', 'session_6_discipline', 'session_6_teacher', 'session_6_room'], 'integer'],
+            [['day_of_week', 'status_week', 'updated_at'], 'safe'],
         ];
     }
 
@@ -59,9 +59,7 @@ class ScheduleSearch extends Schedule
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'id' => $this->id,
-            'for_the_day' => $this->for_the_day,
-            'for_the_group' => $this->for_the_group,
+            'training_group' => $this->training_group,
             'session_1_discipline' => $this->session_1_discipline,
             'session_1_teacher' => $this->session_1_teacher,
             'session_1_room' => $this->session_1_room,
@@ -82,6 +80,9 @@ class ScheduleSearch extends Schedule
             'session_6_room' => $this->session_6_room,
             'updated_at' => $this->updated_at,
         ]);
+
+        $query->andFilterWhere(['like', 'day_of_week', $this->day_of_week])
+            ->andFilterWhere(['like', 'status_week', $this->status_week]);
 
         return $dataProvider;
     }

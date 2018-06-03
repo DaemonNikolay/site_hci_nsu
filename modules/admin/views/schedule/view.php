@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Schedule */
 
-$this->title = $model->id;
+$this->title = $model->training_group;
 $this->params['breadcrumbs'][] = ['label' => 'Schedules', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -15,8 +15,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Обновить', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Удалить', ['delete', 'id' => $model->id], [
+        <?= Html::a('Update', ['update', 'training_group' => $model->training_group, 'day_of_week' => $model->day_of_week, 'status_week' => $model->status_week], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Delete', ['delete', 'training_group' => $model->training_group, 'day_of_week' => $model->day_of_week, 'status_week' => $model->status_week], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
@@ -28,9 +28,9 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
-            'for_the_day',
-            'for_the_group',
+            'training_group',
+            'day_of_week',
+            'status_week',
             'session_1_discipline',
             'session_1_teacher',
             'session_1_room',

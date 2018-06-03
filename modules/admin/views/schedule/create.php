@@ -2,7 +2,6 @@
 
 use yii\helpers\Html;
 
-
 /* @var $this yii\web\View */
 /* @var $model app\models\Schedule */
 /* @var $groups app\models\Schedule */
@@ -10,7 +9,7 @@ use yii\helpers\Html;
 /* @var $rooms app\models\Schedule */
 /* @var $disciplines app\models\Schedule */
 
-$this->title = 'Создание расписания';
+$this->title = 'Create Schedule';
 $this->params['breadcrumbs'][] = ['label' => 'Schedules', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -20,6 +19,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= $this->render('_form', ['groups' => $groups,
         'model' => $model, 'teachers' => $teachers, 'rooms' => $rooms,
-                                'disciplines' => $disciplines]) ?>
+        'disciplines' => $disciplines]) ?>
 
 </div>
