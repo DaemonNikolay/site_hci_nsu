@@ -7,22 +7,14 @@
 
 use yii\helpers\Html;
 use yii\helpers\Url;
-use app\models\Articles;
-use app\models\Category;
 
-$this->title = 'Категории';
+$this->title = 'Пуликации';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <!--main content start-->
 <!--<div class="main-content">-->
 <h1><?= Html::encode($this->title) ?></h1>
 <div class="container">
-
-
-    <?php
-
-    ?>
-
     <?php foreach ($categories as $category): ?>
         <a href="<?= Url::toRoute(['site/category',
                                    'id' => $category->id]); ?>">

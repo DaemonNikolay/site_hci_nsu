@@ -10,7 +10,7 @@ use yii\helpers\Url;
 use app\models\Articles;
 use app\models\Category;
 
-$this->title = 'Категории';
+$this->title = $categories[0]['title'];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <!--main content start-->

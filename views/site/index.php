@@ -74,7 +74,7 @@ $this->title = 'ВКИ НГУ';
                     </div>
                     <div class="col-sm-5 text-center wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
                         <div class="tour-button">
-                            <a href="#" class="btn btn-common">Абитуриентам</a>
+                            <a href="/site/category?id=1" class="btn btn-common">Абитуриентам</a>
                         </div>
                     </div>
                 </div>
@@ -95,7 +95,7 @@ $this->title = 'ВКИ НГУ';
                     <h2>Летняя школа</h2>
                     <p>Обучение основам программирования и IT-навыкам школьников в период летних каникул</p>
                     <div class="school-button">
-                        <a href="#" class="btn btn-common">Летняя школа</a>
+                        <a href="/site/category?id=2" class="btn btn-common">Летняя школа</a>
                     </div>
                 </div>
             </div>
@@ -107,7 +107,7 @@ $this->title = 'ВКИ НГУ';
                     <h2>Вечерняя школа</h2>
                     <p>Обучение основам программирования и IT-навыкам школьников в течение учебного года</p>
                     <div class="school-button">
-                        <a href="#" class="btn btn-common">Вечерняя школа</a>
+                        <a href="/site/category?id=3" class="btn btn-common">Вечерняя школа</a>
                     </div>
                 </div>
             </div>
