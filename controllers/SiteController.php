@@ -127,14 +127,26 @@ class SiteController extends Controller
         return $this->render('about');
     }
 
-    public function actionCategory()
+    public function actionCategories()
     {
         $data = Category::getArticlesByCategory();
         $categories = Category::find()->all();
 
-        return $this->render('category',[
+        return $this->render('categories',[
             'articles'=>$data['articles'],
             'categories'=>$categories
+        ]);
+    }
+
+    public function actionCategory($id)
+    {
+//        $data = Category::getArticlesByCategory();
+        $articles = Articles::find()->where(['category'=>$id])->all();
+        $categories = Category::find()->where(['id' => $id])->all();
+
+        return $this->render('category',[
+            'articles' => $articles,
+            'categories' => $categories
         ]);
     }
 

@@ -263,3 +263,7 @@ th, tr {
     font-size: 14px;
     padding: 0px;
 }
+
+.inox_shining_blue:hover h2{
+    color: #4044ff;
+}

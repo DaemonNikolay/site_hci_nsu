@@ -40,6 +40,7 @@ MainAsset::register($this);
 
         ['label' => 'Главная', 'url' => ['/site/index']],
         ['label' => 'Расписание', 'url' => ['/schedule/index']],
+        ['label' => 'Публикации', 'url' => ['/site/categories']],
 
         Yii::$app->user->isGuest ? (['label' => 'Войти',
             'url' => ['/site/login']
