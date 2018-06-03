@@ -25,7 +25,8 @@ $date = new DateTime();
 
 ?>
     <h1><?= Html::encode($this->title) ?></h1>
-    <code><?= 'Сегодня: ' . $date->format('d.m') . ', ' . translateDayToRus($date->format('w')) . ', ' . whatWeek($date->format('W')); ?></code>
+    <code><?= 'Сегодня: ' . $date->format('d-m-Y') . ', ' . translateDayToRus($date->format('w')) . ', ' . whatWeek($date->format('W')); ?></code>
+    <!--    <code>--><? //= 'Сегодня: ' . $date->format('d-m-Y') . ', ' . $date->format('w') . ', ' . whatWeek($date->format('W')); ?><!--</code>-->
 <?php
 
 $filter_schedule = array(['label' => 'Расписание',
@@ -42,7 +43,7 @@ $tables = array();
 
 foreach ($schedule as $element) {
     $table = "<table class=\"table\">";
-    $table .= "<caption>" . $element['day_of_week'] . " (" . mb_strtolower($element['status_week']) . ") <code> изменялось: " . $element['updated_at'] . "</code></caption>";
+    $table .= "<caption>" . $element['day_of_week'] . " (" . mb_strtolower($element['status_week']) . ") <code> изменялось: " . date('d-m-Y', strtotime($element['updated_at'])) . "</code></caption>";
     $table .= "<thead>";
     $table .= "<tr>";
     $table .= "<th>#</th>";
@@ -110,7 +111,7 @@ function notFound()
 
 function translateDayToRus($i)
 {
-    $days = array('Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Восресенье');
+    $days = array('Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота');
 
     return $days[$i];
 }
