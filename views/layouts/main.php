@@ -124,7 +124,7 @@ MainAsset::register($this);
             <div class="col-sm-12">
                 <div class="copyright-text text-center">
                     <p>&copy; ВКИ НГУ (студенческая версия) <?= date('Y') ?></p>
-                    <p><?= Html::a("Разработано студией Nikulux", "http://nikulux.ru", ['target' => '_blank',
+                    <p><?= Html::a("Разработано Nikulux", "http://nikulux.ru", ['target' => '_blank',
                             'class' => 'developed'
                         ]); ?></p>
                 </div>
