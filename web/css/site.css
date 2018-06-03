@@ -239,3 +239,27 @@ th, tr {
 .nav-tabs {
     margin-top: 25px;
 }
+
+.inox_shining_blue {
+    color: #fff;
+    float: left;
+    line-height: 32px;
+    border: 1px solid rgba(5, 75, 170, 0);
+    text-align: center;
+    width: 32%;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    background: transparent;
+    background-image: -webkit-linear-gradient(rgba(64, 68, 255, 0.3), rgba(0, 255, 163, 0.3));
+    background-image: -moz-linear-gradient(#0245ad, #01dafb);
+    background-image: -o-linear-gradient(#0245ad, #01dafb);
+    -moz-box-shadow: inset 0px -2px 0 #01fff9;
+    -webkit-box-shadow: inset 0px -2px 0 #01fff99c;
+    -o-box-shadow: inset 0px -2px 0 #01fff9;
+    box-shadow: inset 0px -1px 2px #01fff9a6;
+    display: block;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 0px;
+}

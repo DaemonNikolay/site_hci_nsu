@@ -42,10 +42,10 @@ $study_time = array('09:00 - 10:35',
 $tables = array();
 
 foreach ($schedule as $element) {
-    $table = "<table class=\"table\">";
+    $table = "<table class=\"table table-hover\">";
     $table .= "<caption>" . $element['day_of_week'] . " (" . mb_strtolower($element['status_week']) . ") <code> изменялось: " . date('d-m-Y', strtotime($element['updated_at'])) . "</code></caption>";
     $table .= "<thead>";
-    $table .= "<tr>";
+    $table .= "<tr class='bg-primary'>";
     $table .= "<th>#</th>";
     $table .= "<th>Дисциплина</th>";
     $table .= "<th>Аудитория</th>";

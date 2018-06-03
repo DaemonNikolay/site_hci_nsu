@@ -37,6 +37,10 @@ AppAsset::register($this);
     $menuItems = [
         ['label' => 'Админская', 'url' => ['/admin/default/index']],
         ['label' => 'Главная', 'url' => ['/site/index/']],
+        ['label' => 'Контент', 'url' => ['#'], 'items'=>[
+            ['label' => 'Посты', 'url' => ['/admin/articles']],
+            ['label' => 'Категории', 'url' => ['/admin/category']],
+        ]],
         ['label' => 'Диспетчерская', 'url' => ['#'], 'items'=>[
             ['label' => 'Расписание', 'url' => ['/admin/schedule']],
             ['label' => 'Преподаватели', 'url' => ['/admin/teachers']],

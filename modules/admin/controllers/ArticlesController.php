@@ -2,6 +2,7 @@
 
 namespace app\modules\admin\controllers;
 
+use app\models\Category;
 use Yii;
 use app\models\Articles;
 use app\models\ArticlesSearch;
@@ -65,6 +66,7 @@ class ArticlesController extends Controller
     public function actionCreate()
     {
         $model = new Articles();
+        $category = Category::find()->all();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -72,6 +74,7 @@ class ArticlesController extends Controller
 
         return $this->render('create', [
             'model' => $model,
+            'category' => $category,
         ]);
     }
 
@@ -85,6 +88,7 @@ class ArticlesController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $category = Category::find()->all();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -92,6 +96,7 @@ class ArticlesController extends Controller
 
         return $this->render('update', [
             'model' => $model,
+            'category' => $category,
         ]);
     }
 

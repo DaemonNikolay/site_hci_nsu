@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\data\Pagination;
 
 /**
  * This is the model class for table "category".
@@ -27,10 +28,8 @@ class Category extends \yii\db\ActiveRecord
      */
     public function rules()
     {
-        return [
-            [['title'], 'required'],
-            [['title'], 'string', 'max' => 255],
-        ];
+        return [[['title'], 'required'],
+                [['title'], 'string', 'max' => 255],];
     }
 
     /**
@@ -38,10 +37,8 @@ class Category extends \yii\db\ActiveRecord
      */
     public function attributeLabels()
     {
-        return [
-            'id' => 'ID',
-            'title' => 'Title',
-        ];
+        return ['id' => 'ID',
+                'title' => 'Title',];
     }
 
     /**
@@ -50,5 +47,28 @@ class Category extends \yii\db\ActiveRecord
     public function getArticles()
     {
         return $this->hasMany(Articles::className(), ['category' => 'id']);
+    }
+
+//    public static function getArticlesByCategory($id)
+//    {
+//        $query = Articles::find()->where(['id' => $id]);
+//
+//        $count = $query->count();
+//        $pagination = new Pagination(['totalCount' => $count, 'pageSize' => 6]);
+//
+//        $articles = $query->offset($pagination->offset)->limit($pagination->limit)->all();
+//
+//        $data['articles'] = $articles;
+//        $data['pagination'] = $pagination;
+//
+//        return $data;
+//    }
+
+    public static function getArticlesByCategory()
+    {
+        $articles = Articles::find()->all();
+        $data['articles'] = $articles;
+
+        return $data;
     }
 }

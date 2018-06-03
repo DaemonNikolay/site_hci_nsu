@@ -11,6 +11,8 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm as Login;
 use app\models\Signup;
 use app\models\ContactForm;
+use app\models\Articles;
+use app\models\Category;
 
 class SiteController extends Controller
 {
@@ -19,25 +21,13 @@ class SiteController extends Controller
      */
     public function behaviors()
     {
-        return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'only' => ['logout'],
-                'rules' => [
-                    [
-                        'actions' => ['logout'],
-                        'allow' => true,
-                        'roles' => ['@'],
-                    ],
-                ],
-            ],
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'logout' => ['post'],
-                ],
-            ],
-        ];
+        return ['access' => ['class' => AccessControl::className(),
+                             'only' => ['logout'],
+                             'rules' => [['actions' => ['logout'],
+                                          'allow' => true,
+                                          'roles' => ['@'],],],],
+                'verbs' => ['class' => VerbFilter::className(),
+                            'actions' => ['logout' => ['post'],],],];
     }
 
     /**
@@ -45,15 +35,9 @@ class SiteController extends Controller
      */
     public function actions()
     {
-        return [
-            'error' => [
-                'class' => 'yii\web\ErrorAction',
-            ],
-            'captcha' => [
-                'class' => 'yii\captcha\CaptchaAction',
-                'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
-            ],
-        ];
+        return ['error' => ['class' => 'yii\web\ErrorAction',],
+                'captcha' => ['class' => 'yii\captcha\CaptchaAction',
+                              'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,],];
     }
 
     /**
@@ -78,13 +62,10 @@ class SiteController extends Controller
         }
 
         $model = new Login();
-        if ($model->load(Yii::$app->getRequest()
-                                  ->post()) && $model->login()) {
+        if ($model->load(Yii::$app->getRequest()->post()) && $model->login()) {
             return $this->goBack();
         } else {
-            return $this->render('login', [
-                'model' => $model,
-            ]);
+            return $this->render('login', ['model' => $model,]);
         }
     }
 
@@ -96,16 +77,13 @@ class SiteController extends Controller
     {
         if (Yii::$app->user->id == 1) {
             $model = new Signup();
-            if ($model->load(Yii::$app->getRequest()
-                                      ->post())) {
+            if ($model->load(Yii::$app->getRequest()->post())) {
                 if ($user = $model->signup()) {
                     return $this->goHome();
                 }
             }
 
-            return $this->render('signup', [
-                'model' => $model,
-            ]);
+            return $this->render('signup', ['model' => $model,]);
         }
 
         throw new ForbiddenHttpException("Недостаточно прав");
@@ -136,9 +114,7 @@ class SiteController extends Controller
 
             return $this->refresh();
         }
-        return $this->render('contact', [
-            'model' => $model,
-        ]);
+        return $this->render('contact', ['model' => $model,]);
     }
 
     /**
@@ -149,5 +125,27 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
+    }
+
+    public function actionCategory()
+    {
+        $data = Category::getArticlesByCategory();
+        $categories = Category::find()->all();
+
+        return $this->render('category',[
+            'articles'=>$data['articles'],
+            'categories'=>$categories
+        ]);
+    }
+
+    public function actionView($id)
+    {
+        $article = Articles::findOne($id);
+        $categories = Category::find()->all();
+
+        return $this->render('single',[
+            'article'=>$article,
+            'categories'=>$categories,
+        ]);
     }
 }
