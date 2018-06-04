@@ -40,6 +40,7 @@ AppAsset::register($this);
         ['label' => 'Контент', 'url' => ['#'], 'items'=>[
             ['label' => 'Посты', 'url' => ['/admin/articles']],
             ['label' => 'Категории', 'url' => ['/admin/category']],
+            ['label' => 'Юмор', 'url' => ['/admin/memes']],
         ]],
         ['label' => 'Диспетчерская', 'url' => ['#'], 'items'=>[
             ['label' => 'Расписание', 'url' => ['/admin/schedule']],

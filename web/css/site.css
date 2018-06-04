@@ -267,3 +267,7 @@ th, tr {
 .inox_shining_blue:hover h2{
     color: #4044ff;
 }
+
+.carousel-inner{
+    overflow:unset;
+}

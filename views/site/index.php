@@ -1,5 +1,7 @@
 <?php
 
+use yii\bootstrap\Carousel;
+
 /* @var $this yii\web\View */
 
 $this->title = 'ВКИ НГУ';
@@ -23,6 +25,29 @@ $this->title = 'ВКИ НГУ';
     <div class="preloader"><i class="fa fa-sun-o fa-spin"></i></div>
 </section>
 <!--/#home-slider-->
+
+
+<section id="services">
+    <div class="container">
+        <div class="row">
+            <h3 class="index-news">Колонка юмора</h3>
+            <div class="single-service">
+                <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="300ms">
+                    <?php
+                    echo Carousel::widget(['items' => [['content' => '<img style="width:474px;height:296px" src="/web/images/memes/0.jpg"/>'],
+                                                       ['content' => '<img style="width:474px;height:296px" src="/web/images/memes/1.jpg"/>'],
+                                                       ['content' => '<img style="width:474px;height:296px" src="/web/images/memes/2.jpg"/>'],
+                                                       ['content' => '<img style="width:474px;height:296px" src="/web/images/memes/3.jpg"/>'],
+                                                       ['content' => '<img style="width:474px;height:296px" src="/web/images/memes/4.jpg"/>'],
+                                                       ['content' => '<img style="width:474px;height:296px" src="/web/images/memes/5.jpg"/>'],],
+                                           'options' => ['style' => 'width:474px; margin:0 auto;']]);
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 <section id="services">
     <div class="container">

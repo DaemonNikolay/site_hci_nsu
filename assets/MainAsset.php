@@ -9,8 +9,8 @@ class MainAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        "css/site.css",
-        "web/assets_main/css/bootstrap.min.css",
+        "web/css/site.css",
+//        "web/assets_main/css/bootstrap.min.css",
         "web/assets_main/css/font-awesome.min.css",
         "web/assets_main/css/animate.min.css",
         "web/assets_main/css/lightbox.css",
